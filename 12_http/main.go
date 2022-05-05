@@ -1,11 +1,22 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
-	"github.com/apex/log"
 	"io"
 	"net/http"
+
+	"github.com/apex/log"
 )
+
+func PrettyEncode(data interface{}, out io.Writer) error {
+	enc := json.NewEncoder(out)
+	enc.SetIndent("", "    ")
+	if err := enc.Encode(data); err != nil {
+	    return err
+	}
+	return nil
+    }
 
 func request() {
 	var client http.Client

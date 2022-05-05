@@ -1,10 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
-func Test() {
+func TestString1() {
 	var a = "ahaha"
 	fmt.Printf("aa %s \n", a)
+	fmt.Printf("%s \n", strings.Title(a))
 	var b = "bbb"
 	fmt.Printf("%s is some", b)
 }
